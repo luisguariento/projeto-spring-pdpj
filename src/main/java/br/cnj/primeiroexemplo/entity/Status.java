@@ -13,12 +13,15 @@ public class Status {
     }
 
 
-    public Status(Integer id, String descStatus, boolean ativo, List<Processo> listaProcessos) {
+    public Status(Integer id, String descStatus, boolean ativo, List<Processo> listaProcessos, List<Evento> eventosRelacionados) {
         this.id = id;
         this.descStatus = descStatus;
         this.ativo = ativo;
         this.listaProcessos = listaProcessos;
+        this.eventosRelacionados = eventosRelacionados;
     }
+
+    
 
 
     public Integer getId() {
@@ -56,5 +59,27 @@ public class Status {
     public void setListaProcessos(List<Processo> listaProcessos) {
         this.listaProcessos = listaProcessos;
     }
+
+
+    public List<Evento> getEventosRelacionados() {
+        return this.eventosRelacionados;
+    }
+
+    public void setEventosRelacionados(List<Evento> eventosRelacionados) {
+        this.eventosRelacionados = eventosRelacionados;
+    }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", descStatus='" + getDescStatus() + "'" +
+            ", ativo='" + isAtivo() + "'" +
+            ", listaProcessos='" + getListaProcessos() + "'" +
+            ", eventosRelacionados='" + getEventosRelacionados() + "'" +
+            "}";
+    }
+
 
 }
